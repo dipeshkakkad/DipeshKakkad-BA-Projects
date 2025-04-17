@@ -1,0 +1,33 @@
+```mermaid
+graph TD
+    subgraph Actors
+        A[Customer]
+        B[System]
+        C[Payment Gateway]
+        D[Stakeholder]
+    end
+
+    subgraph Use Cases
+        UC1[Enter Checkout Details]
+        UC2[Select Guest Checkout]
+        UC3[Process Payment]
+        UC4[View Dashboard]
+        UC5[Track User Behavior]
+        UC6[Auto-Fill Address]
+        UC7[View Progress Indicator]
+    end
+
+    A --> UC1
+    A --> UC2
+    A --> UC3
+    A --> UC6
+    A --> UC7
+    B --> UC4
+    B --> UC5
+    C --> UC3
+    D --> UC4
+
+    UC1 -->|extends| UC6
+    UC3 -->|includes| C
+    UC4 -->|includes| UC5
+```
